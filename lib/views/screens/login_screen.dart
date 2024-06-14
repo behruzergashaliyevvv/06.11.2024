@@ -3,7 +3,7 @@ import 'package:dars/views/screens/forgot_password_screen.dart';
 import 'package:dars/views/screens/home_screen.dart';
 import 'package:dars/views/screens/register_screen.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -64,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Kirish"),
+        title: Text(AppLocalizations.of(context)!.access),
       ),
       body: Form(
         key: formKey,

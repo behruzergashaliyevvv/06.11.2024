@@ -16,6 +16,7 @@ import 'package:dars/views/screens/settings_screen.dart';
 import 'package:dars/views/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
   runApp(
@@ -60,6 +61,9 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: themeNotifier.currentTheme,
+      locale: Locale('uz'),
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
       //
       //
       home: isLoggedIn ? HomeScreen() : SplashScreen(),

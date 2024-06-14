@@ -1,0 +1,92 @@
+{
+  "apple": "Apple",
+  "@apple": {
+    "description": "theis fruit"
+  },
+  "hello": "Hello {userName}",
+  "@hello": {
+    "description": "A message with a single parametr",
+    "placeholders": {
+      "userName": {
+        "type": "String",
+        "example": "Bob"
+      }
+    }
+  },
+  "helloWorld": "Hello World",
+  "@helloWorld": {
+    "description": "The conventional newborn programmer greating"
+  },
+  
+  "nApples": "{count, plural, =0{no apples} =1{1 apples} other{{count} apples}}",
+  "@nApples": {
+    "description": "A plural message",
+    "placeholders": {
+      "count": {
+        "type": "num",
+        "format": "compact"
+      }
+    }
+  },
+  "access":"Access",
+  "@access":{
+    "description": "this assess"
+  },
+  "email":"Email",
+  "@email":{
+    "description": "this email"
+  },
+  "password":"Password",
+  "@password":{
+    "description": "this password"
+  },
+  "signup":"Sign Up",
+  "@signup":{
+    "description": "this Sign Up"
+  },
+  "forgotpass":"Forgot password",
+  "@forgotpass":{
+    "description": "Forgot password"
+  },
+  "confirmpass":"Confirm password",
+  "@confirmpass":{
+    "description": "this confirm password"
+  },
+  "signin":"Sign In",
+  "@signin":{
+    "description": "this sign in"
+  },
+  "homescreen":"Home Screen",
+  "@homescreen":{
+    "description": "This Home Screen"
+  },
+
+  
+  "notes":"Notes",
+  "@notes":{
+    "description": "this Note"
+  },
+  "plans":"Plans",
+  "@plans":{
+    "description": "This Plans"
+  },
+  "settings":"Settings",
+  "@settings":{
+    "description": "This Settings"
+  },
+  "basket":"Basket",
+  "@basket":{
+    "description": "This Basket"
+  },
+  "favorites":"Favorites",
+  "@favorites":{
+    "description": "This Favorites"
+  },
+  "buys":"Buy product",
+  "@buys":{
+    "description": "This Buy Products"
+  }
+
+
+  
+}

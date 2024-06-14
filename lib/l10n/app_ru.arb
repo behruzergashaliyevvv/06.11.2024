@@ -1,0 +1,16 @@
+{
+    "access": "доступ",
+    "email": "электронная почта",
+    "password": "пароль",
+    "signup": "Регистрация",
+    "forgotpass": "восстановление пароля",
+    "confirmpass": "Подтвердите пароль",
+    "signin": "Tizimga kirish",
+    "homescreen": "авторизоваться",
+    "notes": "Примечания",
+    "plans": "Планы",
+    "settings": "Настройки",
+    "basket": "Корзина",
+    "favorites": "Избранное",
+    "buys": "Куплено"
+}

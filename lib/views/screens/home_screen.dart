@@ -10,6 +10,8 @@ import 'package:dars/views/screens/course_video_page.dart';
 import 'package:dars/views/screens/favorite_screen.dart';
 import 'package:dars/views/screens/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -66,82 +68,94 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.blue,
               ),
             ),
-            ListTile(
-              title: const Text('Notes'),
-              onTap: () {
-                Navigator.pushNamed(context, '/notes');
-              },
-            ),
-            ListTile(
-              title: const Text('Plans'),
-              onTap: () {
-                Navigator.pushNamed(context, '/plans');
-              },
-            ),
-            ListTile(
-              title: const Text('Settings'),
-              onTap: () {
-                Navigator.pushNamed(context, '/settings');
-              },
-            ),
-            ListTile(
-              title: const Text('Savatcha'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => BasketScreen(),
-                  ),
-                );
-              },
-            ),
-            ListTile(
-              title: const Text(
-                'Sevimlilar',
-                style: TextStyle(color: Colors.red),
-              ),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => FavoriteScreen(),
-                    ));
-              },
-            ),
-            ListTile(
-              title: const Text(
-                'Sotib olingan',
-                style: TextStyle(color: Colors.green),
-              ),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => BuyScreen(),
-                    ));
-              },
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 4),
-                  child: IconButton(
-                    onPressed: () {
-                      AuthHttpServices.logout();
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (ctx) {
-                            return const LoginScreen();
-                          },
+            Localizations.override(
+              context: context,
+              locale: const Locale('en'),
+              child: Builder(
+                builder: (context) {
+                  return Column(
+                    children: <Widget>[
+                      ListTile(
+                        title: Text(AppLocalizations.of(context)!.notes),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/notes');
+                        },
+                      ),
+                      ListTile(
+                        title: Text(AppLocalizations.of(context)!.plans),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/plans');
+                        },
+                      ),
+                      ListTile(
+                        title: Text(AppLocalizations.of(context)!.settings),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/settings');
+                        },
+                      ),
+                      ListTile(
+                        title: Text(AppLocalizations.of(context)!.basket),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => BasketScreen(),
+                            ),
+                          );
+                        },
+                      ),
+                      ListTile(
+                        title: Text(
+                          AppLocalizations.of(context)!.favorites,
+                          style: const TextStyle(color: Colors.red),
                         ),
-                      );
-                    },
-                    icon: const Icon(Icons.logout),
-                  ),
-                ),
-              ],
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => FavoriteScreen(),
+                              ));
+                        },
+                      ),
+                      ListTile(
+                        title: Text(
+                          AppLocalizations.of(context)!.buys,
+                          style: TextStyle(color: Colors.green),
+                        ),
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BuyScreen(),
+                              ));
+                        },
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 4),
+                            child: IconButton(
+                              onPressed: () {
+                                AuthHttpServices.logout();
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (ctx) {
+                                      return const LoginScreen();
+                                    },
+                                  ),
+                                );
+                              },
+                              icon: const Icon(Icons.logout),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  );
+                },
+              ),
             ),
           ],
         ),
